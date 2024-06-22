@@ -3,7 +3,9 @@ import { useState } from "react";
 
 // eslint-disable-next-line react/no-unescaped-entities
 // eslint-disable-next-line react/prop-types
-const Home = ({ themeColor, setThemeColor }) => {
+// const Home = ({ themeColor, setThemeColor }) => {
+const Home = (props) => {
+  const { themeColor, setThemeColor } = props;
   //Change Background Header
   const [bgHeader, setBgheader] = useState(false);
   const changeBackgroundColor = () => {
@@ -281,7 +283,9 @@ const Home = ({ themeColor, setThemeColor }) => {
               efficient and pleasant to use for the user.
             </p>
 
-            <button onClick={showInfoModal} className="services__button button">Know More</button>
+            <button onClick={showInfoModal} className="services__button button">
+              Know More
+            </button>
 
             <div className="services_modal">
               <div className="services__modal-content">
@@ -336,7 +340,9 @@ const Home = ({ themeColor, setThemeColor }) => {
               Server.
             </p>
 
-            <button onClick={showInfoModal} className="services__button button">Know More</button>
+            <button onClick={showInfoModal} className="services__button button">
+              Know More
+            </button>
 
             <div className="services_modal">
               <div className="services__modal-content">

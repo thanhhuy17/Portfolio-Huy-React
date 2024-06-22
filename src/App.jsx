@@ -9,8 +9,9 @@ function App() {
   return (
     <div id="home" className={`${themeColor ? "dark-theme" : ""} `}>
       {/* Run Chil Conponent */}
-      <Home themeColor={themeColor} setThemeColor={setThemeColor} />
+      <Home themeColor={themeColor} setThemeColor={setThemeColor}/>
     </div>
+
   );
 }
 
