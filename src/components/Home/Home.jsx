@@ -33,7 +33,15 @@ const Home = ({ themeColor, setThemeColor }) => {
       setShowToggle(!showToggle);
     }
   };
-
+  //Show Modal
+  const [showModal, setShowModal] = useState(false);
+  const showInfoModal = () => {
+    if (showModal) {
+      setShowModal(!showModal);
+    } else {
+      setShowModal(!showModal);
+    }
+  };
   return (
     <div>
       {/* <!-- ========================== HEADER ============================ --> */}
@@ -184,11 +192,18 @@ const Home = ({ themeColor, setThemeColor }) => {
               efficient and pleasant to use for the user.
             </p>
 
-            <button className="services__button button">Know More</button>
+            <button onClick={showInfoModal} className="services__button button">
+              Know More
+            </button>
 
-            <div className="services_modal">
+            <div
+              className={`services_modal ${showModal ? "active-modal" : ""}`}
+            >
               <div className="services__modal-content">
-                <i className="ri-close-line services__modal-close"></i>
+                <i
+                  onClick={showInfoModal}
+                  className="ri-close-line services__modal-close"
+                ></i>
 
                 <h2 className="services__modal-title">Web Developer</h2>
 
@@ -224,7 +239,9 @@ const Home = ({ themeColor, setThemeColor }) => {
               efficient and pleasant to use for the user.
             </p>
 
-            <button className="services__button button">Know More</button>
+            <button onClick={showInfoModal} className="services__button button">
+              Know More
+            </button>
 
             <div className="services_modal">
               <div className="services__modal-content">
@@ -264,7 +281,7 @@ const Home = ({ themeColor, setThemeColor }) => {
               efficient and pleasant to use for the user.
             </p>
 
-            <button className="services__button button">Know More</button>
+            <button onClick={showInfoModal} className="services__button button">Know More</button>
 
             <div className="services_modal">
               <div className="services__modal-content">
@@ -319,7 +336,7 @@ const Home = ({ themeColor, setThemeColor }) => {
               Server.
             </p>
 
-            <button className="services__button button">Know More</button>
+            <button onClick={showInfoModal} className="services__button button">Know More</button>
 
             <div className="services_modal">
               <div className="services__modal-content">
