@@ -6,7 +6,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
 
-//Layout Dùng chung
+// Layout Dùng chung
 const Layout = () => {
   ///Change Theme Color
   const [themeColor, setThemeColor] = useState(false);
@@ -67,15 +67,15 @@ const Layout = () => {
               </li>
 
               <li className="nav__item">
-                <a href="/portfolio" className="nav__link">
+                <Link to="/portfolio" className="nav__link">
                   Portfolio
-                </a>
+                </Link>
               </li>
 
               <li className="nav__item">
-                <a href="/contact" className="button">
+                <Link to="/contact" className="button">
                   Contact Me
-                </a>
+                </Link>
               </li>
             </ul>
             {/* <!-- Close Buttton --> */}
