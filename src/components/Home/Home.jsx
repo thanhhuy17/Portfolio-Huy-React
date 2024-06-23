@@ -1,13 +1,14 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-// eslint-disable-next-line react/no-unescaped-entities
-// eslint-disable-next-line react/prop-types
-// const Home = ({ themeColor, setThemeColor }) => {
-const Home = (props) => {
-  const { themeColor, setThemeColor } = props;
-  //Change Background Header
+const Home = () => {
+  //Change Theme Color
+
   const [bgHeader, setBgheader] = useState(false);
+  const [showToggle, setShowToggle] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [themeColor, setThemeColor] = useState(false);
+
+  //Change Background Header
   const changeBackgroundColor = () => {
     let moving = window.scrollY;
     if (moving > 88) {
@@ -21,102 +22,27 @@ const Home = (props) => {
     window.addEventListener("scroll", changeBackgroundColor);
   }, [bgHeader]);
 
-  // Change Theme Color
-  const onChangeThemeColor = () => {
-    setThemeColor(!themeColor);
-  };
-
-  //Show Toggle
-  const [showToggle, setShowToggle] = useState(false);
-  const showToggleForheader = () => {
-    if (showToggle) {
-      setShowToggle(!showToggle);
-    } else {
-      setShowToggle(!showToggle);
-    }
-  };
   //Show Modal
-  const [showModal, setShowModal] = useState(false);
-  const showInfoModal = () => {
+  const showInfoModal = (e) => {
+    e.stopPropagation(); // chan cac hanh dong truoc no
     if (showModal) {
       setShowModal(!showModal);
     } else {
       setShowModal(!showModal);
     }
   };
+
+  // }
   return (
-    <div>
-      {/* <!-- ========================== HEADER ============================ --> */}
-      <header className={`header  ${bgHeader && "bg-header"}`} id="header">
-        <nav className="nav container">
-          <a href="index.html" className="nav__logo">
-            Nguyễn Thanh Huy
-          </a>
-          <div
-            // onClick={showToggleForheader ? "show-menu" : ""}
-            className={`nav__menu ${showToggle && "show-menu"}`}
-            id="nav-menu"
-          >
-            <ul className="nav__list">
-              <li className="nav__item">
-                <a href="index.html" className="nav__link">
-                  Home
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="about.html" className="nav__link">
-                  About Me
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="work.html" className="nav__link">
-                  Portfolio
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="contact.html" className="button">
-                  Contact Me
-                </a>
-              </li>
-            </ul>
-            {/* <!-- Close Buttton --> */}
-            <div
-              onClick={showToggleForheader}
-              className="nav__close"
-              id="nav-close"
-            >
-              <i className="ri-close-line"></i>
-            </div>
-          </div>
-
-          <div className="nav__actions">
-            {/* <!-- Theme Button --> */}
-            <div onClick={onChangeThemeColor} className="nav__actions-theme">
-              <i
-                // className="ri-moon-line change__theme"
-                className={`ri-${
-                  themeColor ? "sun" : "moon"
-                }-line change__theme`}
-                id="theme-button"
-              ></i>
-            </div>
-            {/* <!-- Toggle Button --> */}
-            <div
-              onClick={showToggleForheader}
-              className="nav__toggle"
-              id="nav-toggle"
-            >
-              <i className="ri-apps-2-line"></i>
-            </div>
-          </div>
-        </nav>
-      </header>
+    <div id="home" className={`${themeColor ? "dark-theme" : ""} `}>
       {/* <!-- ========================== MAIN ============================ --> */}
       {/* <!-- ========================== HOME MAIN ============================ --> */}
-      <div className="home section">
+      <div
+        onClick={() => {
+          setShowToggle(false);
+        }}
+        className="home section"
+      >
         <div className="home__rectange"></div>
 
         <div className="home__container container grid">
@@ -199,9 +125,18 @@ const Home = (props) => {
             </button>
 
             <div
+              onClick={() => {
+                setShowModal(false);
+              }}
               className={`services_modal ${showModal ? "active-modal" : ""}`}
             >
-              <div className="services__modal-content">
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowModal(true);
+                }}
+                className="services__modal-content"
+              >
                 <i
                   onClick={showInfoModal}
                   className="ri-close-line services__modal-close"
@@ -549,75 +484,6 @@ const Home = (props) => {
           </a>
         </div>
       </section>
-
-      {/* <!-- ========================== FOOTER ============================ --> */}
-      <footer className="footer">
-        <div className="footer__container container grid">
-          <div className="footer__content grid">
-            <a href="index.html" className="footer__logo">
-              Huy
-            </a>
-
-            <ul className="footer__links">
-              <li>
-                <a href="about.html" className="footer__link">
-                  About Me
-                </a>
-              </li>
-
-              <li>
-                <a href="work.html" className="footer__link">
-                  Portfolio
-                </a>
-              </li>
-
-              <li>
-                <a href="contact.html" className="footer__link">
-                  Contact Me
-                </a>
-              </li>
-            </ul>
-
-            <div className="footer__social">
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                className="footer__social-link"
-              >
-                <i className="ri-facebook-circle-fill"></i>
-              </a>
-
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                className="footer__social-link"
-              >
-                <i className="ri-instagram-fill"></i>
-              </a>
-
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                className="footer__social-link"
-              >
-                <i className="ri-twitter-fill"></i>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                className="footer__social-link"
-              >
-                <i className="ri-linkedin-box-fill"></i>
-              </a>
-            </div>
-          </div>
-
-          <div className="footer__copy">
-            &#169; All Rights Reserved By Huy Nguyen
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
