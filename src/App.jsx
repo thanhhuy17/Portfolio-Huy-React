@@ -5,11 +5,13 @@ import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
+import { ThemeProvider, useTheme } from "./components/AppContext/AppContext";
 
 // Layout Dùng chung
 const Layout = () => {
   ///Change Theme Color
-  const [themeColor, setThemeColor] = useState(false);
+  // const [themeColor, setThemeColor] = useState(false);
+  const [themeColor, setThemeColor] = useTheme(false);
   const [bgHeader, setBgheader] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
 
@@ -185,16 +187,18 @@ const Layout = () => {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="portfolio" element={<Portfolio />} />
-        <Route path="contact" element={<Contact />} />
+    <ThemeProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="contact" element={<Contact />} />
 
-        <Route path="*" element={<div>Not Found</div>} />
-      </Route>
-    </Routes>
+          <Route path="*" element={<div>Not Found</div>} />
+        </Route>
+      </Routes>
+    </ThemeProvider>
   );
 }
 

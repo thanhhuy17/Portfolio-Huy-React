@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "../AppContext/AppContext";
 
 const Home = () => {
-  //Change Theme Color
-
   const [bgHeader, setBgheader] = useState(false);
-  const [showToggle, setShowToggle] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [themeColor, setThemeColor] = useState(false);
-
+  // const [themeColor, setThemeColor] = useState(false);
+  const { themeColor } = useTheme();
   //Change Background Header
   const changeBackgroundColor = () => {
     let moving = window.scrollY;
@@ -21,15 +19,6 @@ const Home = () => {
   useEffect(() => {
     window.addEventListener("scroll", changeBackgroundColor);
   }, [bgHeader]);
-
-  //Show Toggle
-  const showToggleForheader = () => {
-    if (showToggle) {
-      setShowToggle(!showToggle);
-    } else {
-      setShowToggle(!showToggle);
-    }
-  };
 
   //Show Modal
   const showInfoModal = (e) => {
@@ -46,9 +35,7 @@ const Home = () => {
     <div id="home" className={`${themeColor ? "dark-theme" : ""} `}>
       {/* <!-- ========================== MAIN ============================ --> */}
       {/* <!-- ========================== HOME MAIN ============================ --> */}
-      <div
-        className="home section"
-      >
+      <div className="home section">
         <div className="home__rectange"></div>
 
         <div className="home__container container grid">
