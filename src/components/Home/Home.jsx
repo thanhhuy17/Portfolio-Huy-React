@@ -22,6 +22,15 @@ const Home = () => {
     window.addEventListener("scroll", changeBackgroundColor);
   }, [bgHeader]);
 
+  //Show Toggle
+  const showToggleForheader = () => {
+    if (showToggle) {
+      setShowToggle(!showToggle);
+    } else {
+      setShowToggle(!showToggle);
+    }
+  };
+
   //Show Modal
   const showInfoModal = (e) => {
     e.stopPropagation(); // chan cac hanh dong truoc no
@@ -38,9 +47,6 @@ const Home = () => {
       {/* <!-- ========================== MAIN ============================ --> */}
       {/* <!-- ========================== HOME MAIN ============================ --> */}
       <div
-        onClick={() => {
-          setShowToggle(false);
-        }}
         className="home section"
       >
         <div className="home__rectange"></div>
