@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { AppContext } from "../AppContext/AppContext";
+
 const About = () => {
+  const {showToggle, showToggleForheader} = useContext(AppContext)
+
   return (
     <div id="about">
-      <div className="about section">
+      <div onClick={showToggle?showToggleForheader:''} className="about section">
         <h2 className="section__title">
           My Personal <br />
           Information
@@ -9,9 +14,9 @@ const About = () => {
 
         <div className="about__container about__page container grid">
           <div className="about__perfil perfil">
-            <div className="perfil__content">
+            <div className="perfil__content">              
               <img
-                src="./assets/img/home-perfilV1.png"
+                src={"./img/home-perfilV1.png"}
                 alt="image"
                 className="perfil__img"
               />
@@ -42,67 +47,67 @@ const About = () => {
               <h3 className="about__skills-title">My Skills Are</h3>
               <div className="about__skills-content grid">
                 <img
-                  src="./assets/img/about-html.svg"
+                  src="./img/about-html.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-css.svg"
+                  src="./img/about-css.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-javascript.svg"
+                  src="./img/about-javascript.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-git.svg"
+                  src="./img/about-git.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-react.svg"
+                  src="./img/about-react.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-github.svg"
+                  src="./img/about-github.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-next-js.svg"
+                  src="./img/about-next-js.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-sass.svg"
+                  src="./img/about-sass.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-tailwind-css.svg"
+                  src="./img/about-tailwind-css.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-figma.svg"
+                  src="./img/about-figma.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-sketch.svg"
+                  src="./img/about-sketch.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-photoshop.svg"
+                  src="./img/about-photoshop.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./assets/img/about-illustrator.svg"
+                  src="./img/about-illustrator.svg"
                   alt="image"
                   className="about__skills-img"
                 />

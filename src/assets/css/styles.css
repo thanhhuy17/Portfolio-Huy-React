@@ -121,7 +121,8 @@ img {
 }
 
 .change__theme{
-    color: var(--white-color);
+    /* color: var(--white-color); */
+    color: var(--first-color-light);
     font-size: 1.25rem;
     cursor: pointer;
     transition: color 0.4s;
@@ -271,7 +272,8 @@ img {
     align-items: center;
 }
 .nav__logo{
-    color: var(--white-color);
+    /* color: var(--white-color); */
+    color: var(--first-color-light);
     font-weight: var(--font-semi-bold);
     transition: color .4s;
 }
@@ -283,12 +285,16 @@ img {
 }
 
 .nav__toggle{
-    color: var(--white-color);
+    /* color: var(--white-color); */
+    color: var(--first-color-light);
+
     transition: color .4s;
 }
 
 .nav__close{
-    color: var(--title-color);
+    /* color: var(--title-color); */
+    color: var(--first-color-light);
+
 }
 /* Navigation for mobile devices */
 @media screen and (max-width: 1150px) {

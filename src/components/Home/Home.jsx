@@ -1,22 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../AppContext/AppContext";
 
 const Home = () => {
-  const [bgHeader, setBgheader] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [themeColor, setThemeColor] = useState(false);
-  //Change Background Header
-  const changeBackgroundColor = () => {
-    let moving = window.scrollY;
-    if (moving > 88) {
-      setBgheader(true);
-    } else {
-      setBgheader(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", changeBackgroundColor);
-  }, [bgHeader]);
+  const {themeColor, showToggleForheader,showToggle} = useContext(AppContext)
 
   //Show Modal
   const showInfoModal = (e) => {
@@ -33,7 +20,7 @@ const Home = () => {
     <div id="home" className={`${themeColor ? "dark-theme" : ""} `}>
       {/* <!-- ========================== MAIN ============================ --> */}
       {/* <!-- ========================== HOME MAIN ============================ --> */}
-      <div className="home section">
+      <div onClick={showToggle?showToggleForheader: ''} className="home section">
         <div className="home__rectange"></div>
 
         <div className="home__container container grid">
@@ -95,7 +82,7 @@ const Home = () => {
       </div>
 
       {/* <!-- ========================== SERVICES ============================ --> */}
-      <div className="services section">
+      <div onClick={showToggle?showToggleForheader: ''} className="services section">
         <h2 className="section__title">
           The Services <br />I Offer
         </h2>
@@ -316,7 +303,7 @@ const Home = () => {
       </div>
 
       {/* <!-- ========================== WORK ============================ --> */}
-      <div className="work section">
+      <div onClick={showToggle?showToggleForheader: ''} className="work section">
         <h2 className="section__title">
           My Most <br />
           Resent Works
@@ -386,7 +373,7 @@ const Home = () => {
       </div>
 
       {/* <!-- ========================== TESTIMONIAL ============================ --> */}
-      <section className="testimonial section">
+      <section onClick={showToggle?showToggleForheader: ''}className="testimonial section">
         <h2 className="section__title">
           What They Say <br />
           About Me?
@@ -463,7 +450,7 @@ const Home = () => {
       </section>
 
       {/* <!-- ========================== CONTACT ============================ --> */}
-      <section className="contact section">
+      <section onClick={showToggle?showToggleForheader: ''} className="contact section">
         <div className="contact__container container grid">
           <h2 className="section__title">
             Let's Talk <br />

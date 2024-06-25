@@ -1,17 +1,26 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./App.css";
 import { Link, Outlet, Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
-import Home from "./components/Home/Home";
+import { AppContext, AppProvider } from "./components/AppContext/AppContext";
+
 
 // Layout Dùng chung cho Home, About, Portfolio, Contact.
 const Layout = () => {
-  ///Change Theme Color
-  const [themeColor, setThemeColor] = useState(false);
+  //Change Theme Color
+  const {
+    onChangeThemeColor,
+    themeColor, 
+    showToggleForheader,
+    showToggle
+  } = useContext(AppContext)
+
+
   const [bgHeader, setBgheader] = useState(false);
-  const [showToggle, setShowToggle] = useState(false);
+  // const [showToggle, setShowToggle] = useState(false);
 
   //Change Background Header
   const changeBackgroundColor = () => {
@@ -27,19 +36,14 @@ const Layout = () => {
     window.addEventListener("scroll", changeBackgroundColor);
   }, [bgHeader]);
 
-  // Change Theme Color
-  const onChangeThemeColor = () => {
-    setThemeColor(!themeColor);
-  };
-
   //Show Toggle
-  const showToggleForheader = () => {
-    if (showToggle) {
-      setShowToggle(!showToggle);
-    } else {
-      setShowToggle(!showToggle);
-    }
-  };
+  // const showToggleForheader = () => {
+  //   if (showToggle) {
+  //     setShowToggle(!showToggle);
+  //   } else {
+  //     setShowToggle(!showToggle);
+  //   }
+  // };
 
   return (
     <>
@@ -54,25 +58,25 @@ const Layout = () => {
             id="nav-menu"
           >
             <ul className="nav__list">
-              <li className="nav__item">
+              <li onClick={showToggleForheader} className="nav__item">
                 <Link to="/" className="nav__link">
                   Home
                 </Link>
               </li>
 
-              <li className="nav__item">
+              <li onClick={showToggleForheader} className="nav__item">
                 <Link to="/about" className="nav__link">
                   About Me
                 </Link>
               </li>
 
-              <li className="nav__item">
+              <li onClick={showToggleForheader} className="nav__item">
                 <Link to="/portfolio" className="nav__link">
                   Portfolio
                 </Link>
               </li>
 
-              <li className="nav__item">
+              <li onClick={showToggleForheader} className="nav__item">
                 <Link to="/contact" className="button">
                   Contact Me
                 </Link>
@@ -184,17 +188,20 @@ const Layout = () => {
 };
 
 function App() {
-  return (    
+  return ( 
+    <AppProvider>
+
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="contact" element={<Contact />} />
-
+          {/* Default show "Not Found" */}
           <Route path="*" element={<div>Not Found</div>} />
         </Route>
       </Routes>    
+    </AppProvider>   
   );
 }
 
