@@ -6,7 +6,7 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
 import Home from "./components/Home/Home";
 
-// Layout Dùng chung
+// Layout Dùng chung cho Home, About, Portfolio, Contact.
 const Layout = () => {
   ///Change Theme Color
   const [themeColor, setThemeColor] = useState(false);
@@ -191,7 +191,6 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="contact" element={<Contact />} />
-
         <Route path="*" element={<div>Not Found</div>} />
       </Route>
     </Routes>
