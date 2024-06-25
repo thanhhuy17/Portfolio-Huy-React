@@ -139,6 +139,24 @@ img {
     background-color: var(--body-color);
     color: var(--text-color);
 }
+#about.dark-theme{
+    --title-color: hsl(var(--hue), 24%, 85%);
+   --text-color: hsl(var(--hue), 8%, 70%);
+   --body-color: hsl(var(--hue), 16%, 8%);
+   --container-color: hsl(var(--hue), 16%, 12%);
+   --shadow-color: hsla(var(--hue), 32%, 4%, .4); 
+   background-color: var(--body-color);
+   color: var(--text-color);
+}
+#portfolio.dark-theme{
+    --title-color: hsl(var(--hue), 24%, 85%);
+   --text-color: hsl(var(--hue), 8%, 70%);
+   --body-color: hsl(var(--hue), 16%, 8%);
+   --container-color: hsl(var(--hue), 16%, 12%);
+   --shadow-color: hsla(var(--hue), 32%, 4%, .4); 
+   background-color: var(--body-color);
+   color: var(--text-color);
+}
 
 /* 
     Color changes in some parts of the website, in dark theme.

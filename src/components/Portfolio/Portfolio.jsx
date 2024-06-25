@@ -3,8 +3,8 @@ import { AppContext } from "../AppContext/AppContext";
 
 const Portfolio = () => {
 
-  const {showToggle, showToggleForheader} = useContext(AppContext)
-  return <div is="portfolio">
+  const {themeColor,showToggle, showToggleForheader} = useContext(AppContext)
+  return <div id="portfolio" className={`${themeColor ? "dark-theme" : ""} `}>
     {/* <!-- ========================== WORK ============================ --> */}
     <div onClick={showToggle?showToggleForheader: ''} className="work section">
         <h2 className="section__title">
