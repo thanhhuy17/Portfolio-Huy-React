@@ -48,12 +48,13 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    if (contactForm.current) {
-      contactForm.current.addEventListener("submit", sendEmail);
+    const currentContactForm = contactForm.current;
+    if (currentContactForm) {
+      currentContactForm.addEventListener("submit", sendEmail);
     }
     return () => {
-      if (contactForm.current) {
-        contactForm.current.removeEventListener("submit", sendEmail);
+      if (currentContactForm) {
+        currentContactForm.removeEventListener("submit", sendEmail);
       }
     };
   }, [contactMessage]);

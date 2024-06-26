@@ -113,9 +113,9 @@ const Layout = () => {
       <footer className="footer">
         <div className="footer__container container grid">
           <div className="footer__content grid">
-            <a href="index.html" className="footer__logo">
+            <Link to="/" className="footer__logo">
               Huy
-            </a>
+            </Link>
 
             <ul className="footer__links">
               <li>
