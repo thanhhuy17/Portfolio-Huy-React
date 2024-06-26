@@ -2,11 +2,15 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext/AppContext";
 
 const About = () => {
-  const {themeColor,showToggle, showToggleForheader} = useContext(AppContext)
+  const { themeColor, showToggle, showToggleForheader } =
+    useContext(AppContext);
 
   return (
     <div id="about" className={`${themeColor ? "dark-theme" : ""} `}>
-      <div onClick={showToggle?showToggleForheader:''} className="about section">
+      <div
+        onClick={showToggle ? () => showToggleForheader() : undefined}
+        className="about section"
+      >
         <h2 className="section__title">
           My Personal <br />
           Information
@@ -14,7 +18,7 @@ const About = () => {
 
         <div className="about__container about__page container grid">
           <div className="about__perfil perfil">
-            <div className="perfil__content">              
+            <div className="perfil__content">
               <img
                 src={"./img/home-perfilV1.png"}
                 alt="image"

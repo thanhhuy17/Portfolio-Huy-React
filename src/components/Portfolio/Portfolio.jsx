@@ -2,11 +2,15 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext/AppContext";
 
 const Portfolio = () => {
-
-  const {themeColor,showToggle, showToggleForheader} = useContext(AppContext)
-  return <div id="portfolio" className={`${themeColor ? "dark-theme" : ""} `}>
-    {/* <!-- ========================== WORK ============================ --> */}
-    <div onClick={showToggle?showToggleForheader: ''} className="work section">
+  const { themeColor, showToggle, showToggleForheader } =
+    useContext(AppContext);
+  return (
+    <div id="portfolio" className={`${themeColor ? "dark-theme" : ""} `}>
+      {/* <!-- ========================== WORK ============================ --> */}
+      <div
+        onClick={showToggle ? () => showToggleForheader() : undefined}
+        className="work section"
+      >
         <h2 className="section__title">
           My Most <br />
           Resent Works
@@ -74,7 +78,8 @@ const Portfolio = () => {
           </article>
         </div>
       </div>
-  </div>;
+    </div>
+  );
 };
 
 export default Portfolio;

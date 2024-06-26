@@ -7,17 +7,11 @@ import Portfolio from "./components/Portfolio/Portfolio";
 import Contact from "./components/Contact/Contact";
 import { AppContext, AppProvider } from "./components/AppContext/AppContext";
 
-
 // Layout Dùng chung cho Home, About, Portfolio, Contact.
 const Layout = () => {
   //Change Theme Color
-  const {
-    onChangeThemeColor,
-    themeColor, 
-    showToggleForheader,
-    showToggle
-  } = useContext(AppContext)
-
+  const { onChangeThemeColor, themeColor, showToggleForheader, showToggle } =
+    useContext(AppContext);
 
   const [bgHeader, setBgheader] = useState(false);
   // const [showToggle, setShowToggle] = useState(false);
@@ -50,9 +44,9 @@ const Layout = () => {
       {/* <!-- ========================== HEADER ============================ --> */}
       <header className={`header  ${bgHeader && "bg-header"}`} id="header">
         <nav className="nav container">
-          <a href="index.html" className="nav__logo">
+          <Link to="/" className="nav__logo">
             Nguyễn Thanh Huy
-          </a>
+          </Link>
           <div
             className={`nav__menu ${showToggle && "show-menu"}`}
             id="nav-menu"
@@ -188,9 +182,8 @@ const Layout = () => {
 };
 
 function App() {
-  return ( 
+  return (
     <AppProvider>
-
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -200,8 +193,8 @@ function App() {
           {/* Default show "Not Found" */}
           <Route path="*" element={<div>Not Found</div>} />
         </Route>
-      </Routes>    
-    </AppProvider>   
+      </Routes>
+    </AppProvider>
   );
 }
 
