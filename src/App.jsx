@@ -119,27 +119,27 @@ const Layout = () => {
 
             <ul className="footer__links">
               <li>
-                <a href="about.html" className="footer__link">
+                <Link to="/about" className="footer__link">
                   About Me
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="work.html" className="footer__link">
+                <Link to="/portfolio" className="footer__link">
                   Portfolio
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="contact.html" className="footer__link">
+                <Link to="/contact" className="footer__link">
                   Contact Me
-                </a>
+                </Link>
               </li>
             </ul>
 
             <div className="footer__social">
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/profile.php?id=100069410599370"
                 target="_blank"
                 className="footer__social-link"
               >
@@ -147,7 +147,7 @@ const Layout = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/huyipc247/"
                 target="_blank"
                 className="footer__social-link"
               >
@@ -159,7 +159,7 @@ const Layout = () => {
                 target="_blank"
                 className="footer__social-link"
               >
-                <i className="ri-twitter-fill"></i>
+                <i className="ri-twitter-x-line"></i>
               </a>
 
               <a
