@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext/AppContext";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const { themeColor, showToggle, showToggleForheader } =
@@ -42,9 +43,9 @@ const About = () => {
                   carried out.
                 </p>
               </div>
-              <a href="contact.html" className="about__button button">
+              <Link to="/contact" className="about__button button">
                 Contact Me
-              </a>
+              </Link>
             </div>
 
             <div className="about__skills">
