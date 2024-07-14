@@ -56,7 +56,7 @@ const Home = () => {
                   target="_blank"
                   className="home__social-link"
                 >
-                  <i className="ri-github-fill"></i>
+                  <i className="ri-github-fill sizegit"></i>
                 </a>
 
                 <a
@@ -238,29 +238,12 @@ const Home = () => {
                   <li className="services__modal-item">
                     I solve performance problems on web pages.
                   </li>
-                  {/* <!-- Add check webkit Scrollbar-->
-                                <!-- <li className="services__modal-item">
-                                    I position your website with advanced SEO.
-                                </li>
-
-                                <li className="services__modal-item">
-                                    I solve performance problems on web pages.
-                                </li>
-                                <li className="services__modal-item">
-                                    I position your website with advanced SEO.
-                                </li>
-
-                                <li className="services__modal-item">
-                                    I solve performance problems on web pages.
-                                </li> --> */}
                 </ul>
               </div>
             </div>
           </article>
 
           <article className="services__card">
-            {/* <i className="ri-layout-2-line services__icon"></i> */}
-            {/* <i className="fa-solid fa-database services__icon"></i> */}
             <BsDatabase className="services__icon" />
 
             <h2 className="services__title">Database Management</h2>
@@ -297,21 +280,6 @@ const Home = () => {
                   <li className="services__modal-item">
                     I solve performance problems on web pages.
                   </li>
-                  {/* <!-- Add check webkit Scrollbar-->
-                                <!-- <li className="services__modal-item">
-                                    I position your website with advanced SEO.
-                                </li>
-
-                                <li className="services__modal-item">
-                                    I solve performance problems on web pages.
-                                </li>
-                                <li className="services__modal-item">
-                                    I position your website with advanced SEO.
-                                </li>
-
-                                <li className="services__modal-item">
-                                    I solve performance problems on web pages.
-                                </li> --> */}
                 </ul>
               </div>
             </div>
@@ -395,26 +363,6 @@ const Home = () => {
               Pass: <strong>ipc247@123456</strong> )
             </span>
           </article>
-
-          {/* <article className="work__card">
-            <a href="#" target="_blank" className="work__link">
-              <img src="./img/work-5.png" alt="image" className="work__img" />
-              <i className="ri-arrow-right-circle-line work__icon"></i>
-            </a>
-
-            <h2 className="work__title">Interface Design</h2>
-            <span className="work__subtitle">UI/UX</span>
-          </article> */}
-
-          {/* <article className="work__card">
-            <a href="#" target="_blank" className="work__link">
-              <img src="./img/work-6.png" alt="image" className="work__img" />
-              <i className="ri-arrow-right-circle-line work__icon"></i>
-            </a>
-
-            <h2 className="work__title">Interface Design</h2>
-            <span className="work__subtitle">UI/UX</span>
-          </article> */}
         </div>
       </div>
 
