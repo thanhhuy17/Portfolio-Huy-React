@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import "./App.css";
-import { Link, Outlet, Route, Routes } from "react-router-dom";
+import { Link, Outlet, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
@@ -171,10 +171,7 @@ const Layout = () => {
               </a>
             </div>
           </div>
-
-          <div className="footer__copy">
-            &#169; All Rights Reserved By Huy Nguyen
-          </div>
+          <div className="footer__copy">&#169; Created By Huy Nguyen</div>
         </div>
       </footer>
     </>
@@ -182,6 +179,11 @@ const Layout = () => {
 };
 
 function App() {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <AppProvider>
       <Routes>

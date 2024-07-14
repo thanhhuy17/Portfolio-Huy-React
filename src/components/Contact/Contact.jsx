@@ -29,7 +29,7 @@ const Contact = () => {
         // Remove message after five seconds (update state)
         setTimeout(() => {
           setContactMessage("");
-        }, 4000);
+        }, 3000);
 
         contactForm.current.reset();
       })
@@ -66,6 +66,9 @@ const Contact = () => {
         onClick={showToggle ? () => showToggleForheader() : undefined}
         className="contact section"
       >
+        <h3 className="section__title">
+          My Email: huymau170819999@gmail.com <br /> My Phone number: 0379849760{" "}
+        </h3>
         <h2 className="section__title">
           Let's Talk <br />
           About Your Project

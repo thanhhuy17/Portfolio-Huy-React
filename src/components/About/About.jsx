@@ -32,8 +32,8 @@ const About = () => {
               <div className="about__info grid">
                 <h1 className="about_name">Nguyễn Thanh Huy</h1>
                 <h2 className="about_profession">
-                  Database Management
-                  <br /> Web Programming
+                  Web Developer
+                  <br /> Database Management
                 </h2>
                 <p className="about__description">
                   Passionate about creating <b>Web Pages</b> with
@@ -80,27 +80,37 @@ const About = () => {
                   alt="image"
                   className="about__skills-img"
                 />
-                <img
+                {/* <img
                   src="./img/about-next-js.svg"
                   alt="image"
                   className="about__skills-img"
-                />
-                <img
+                /> */}
+                {/* <img
                   src="./img/about-sass.svg"
                   alt="image"
                   className="about__skills-img"
-                />
+                /> */}
                 <img
                   src="./img/about-tailwind-css.svg"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
-                  src="./img/about-figma.svg"
+                  src="./img/antd.png"
                   alt="image"
                   className="about__skills-img"
                 />
                 <img
+                  src="./img/sqlimg.png"
+                  alt="image"
+                  className="about__skills-img"
+                />
+                {/* <img
+                  src="./img/about-figma.svg"
+                  alt="image"
+                  className="about__skills-img"
+                /> */}
+                {/* <img
                   src="./img/about-sketch.svg"
                   alt="image"
                   className="about__skills-img"
@@ -114,7 +124,7 @@ const About = () => {
                   src="./img/about-illustrator.svg"
                   alt="image"
                   className="about__skills-img"
-                />
+                /> */}
               </div>
             </div>
           </div>

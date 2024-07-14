@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../AppContext/AppContext";
+import { Link } from "react-router-dom";
+import { BsDatabase } from "react-icons/bs";
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
@@ -42,9 +44,9 @@ const Home = () => {
             <div className="home__data grid">
               <h1 className="home__name">Nguyễn Thanh Huy</h1>
               <h2 className="home__profession">
-                Database Management
+                Web Developer
                 <br />
-                Web Programming
+                Database Management
                 <br />
                 IT Support
               </h2>
@@ -101,8 +103,8 @@ const Home = () => {
             <h2 className="services__title">Web Developer</h2>
 
             <p className="services__description">
-              Beautiful and elegant designs with interfaces that are intuitive,
-              efficient and pleasant to use for the user.
+              Write code to perform calculations, manipulate data from a
+              database, and display results in an interactive way on a website.
             </p>
 
             <button onClick={showInfoModal} className="services__button button">
@@ -127,9 +129,17 @@ const Home = () => {
                   className="ri-close-line services__modal-close"
                 ></i>
 
-                <h2 className="services__modal-title">Web Developer</h2>
+                {/* <h2 className="services__modal-title">Web Developer</h2> */}
 
                 <ul className="services__modal-list grid">
+                  <li className="services__modal-item">
+                    Find and fix bugs in the code to ensure the website runs
+                    smoothly.
+                  </li>
+                  <li className="services__modal-item">
+                    Monitor, update, and maintain the website and web
+                    applications to ensure security and performance.
+                  </li>
                   <li className="services__modal-item">
                     Create professional and quality websites at the client's
                     request.
@@ -157,8 +167,7 @@ const Home = () => {
             <h2 className="services__title">Web Designer</h2>
 
             <p className="services__description">
-              Beautiful and elegant designs with interfaces that are intuitive,
-              efficient and pleasant to use for the user.
+              Beautiful and elegant designs with interfaces that are intuitive.
             </p>
 
             <button onClick={showInfoModal} className="services__button button">
@@ -199,8 +208,7 @@ const Home = () => {
             <h2 className="services__title">Interfaces UI/UX</h2>
 
             <p className="services__description">
-              Beautiful and elegant designs with interfaces that are intuitive,
-              efficient and pleasant to use for the user.
+              Efficient and pleasant to use for the user.
             </p>
 
             <button onClick={showInfoModal} className="services__button button">
@@ -251,7 +259,9 @@ const Home = () => {
           </article>
 
           <article className="services__card">
-            <i className="ri-layout-2-line services__icon"></i>
+            {/* <i className="ri-layout-2-line services__icon"></i> */}
+            {/* <i className="fa-solid fa-database services__icon"></i> */}
+            <BsDatabase className="services__icon" />
 
             <h2 className="services__title">Database Management</h2>
 
@@ -322,45 +332,71 @@ const Home = () => {
         <div className="work__container container grid">
           <article className="work__card">
             <a href="#" target="_blank" className="work__link">
-              <img src="./img/work-1.png" alt="image" className="work__img" />
+              <img src="./img/project1.png" alt="image" className="work__img" />
               <i className="ri-arrow-right-circle-line work__icon"></i>
             </a>
 
             <h2 className="work__title">Creative Website</h2>
+            <span className="work__subtitle">Website Portfolio</span>
+          </article>
+
+          <article className="work__card">
+            <a
+              href="https://movieapphuynguyen-thanhhuy17s-projects.vercel.app/"
+              target="_blank"
+              className="work__link"
+            >
+              <img src="./img/project2.png" alt="image" className="work__img" />
+              <i className="ri-arrow-right-circle-line work__icon"></i>
+            </a>
+
+            <h2 className="work__title">Movie website design</h2>
             <span className="work__subtitle">Website Design</span>
           </article>
 
           <article className="work__card">
-            <a href="#" target="_blank" className="work__link">
-              <img src="./img/work-2.png" alt="image" className="work__img" />
+            <a
+              href="https://react-admin-dashboard-gqv5qrwkt-thanhhuy17s-projects.vercel.app/"
+              target="_blank"
+              className="work__link"
+            >
+              <img src="./img/project3.png" alt="image" className="work__img" />
               <i className="ri-arrow-right-circle-line work__icon"></i>
             </a>
 
-            <h2 className="work__title">Creative Website</h2>
-            <span className="work__subtitle">Website Design</span>
+            <h2 className="work__title">Admin Dashboard Web</h2>
+            <span className="work__subtitle">
+              Management Website <br />
+              (User Login: <strong>michael.scott@dundermifflin.com</strong>
+              <br />
+              Pass: <strong>demodemo</strong> )
+            </span>
           </article>
 
           <article className="work__card">
-            <a href="#" target="_blank" className="work__link">
-              <img src="./img/work-3.png" alt="image" className="work__img" />
+            <a
+              href="http://103.116.9.183:5505/#/login"
+              target="_blank"
+              className="work__link"
+            >
+              <img src="./img/project4.png" alt="image" className="work__img" />
               <i className="ri-arrow-right-circle-line work__icon"></i>
             </a>
 
-            <h2 className="work__title">Awesome App</h2>
-            <span className="work__subtitle">App Design</span>
+            <h2 className="work__title">
+              Website For Import And Export Management
+            </h2>
+            <span className="work__subtitle">
+              {" "}
+              2 Years Of Experience In System Deployment, Error Checking, Data
+              Checking, Data Editing. <br />
+              (User Login: <strong>finaltest</strong>
+              <br />
+              Pass: <strong>ipc247@123456</strong> )
+            </span>
           </article>
 
-          <article className="work__card">
-            <a href="#" target="_blank" className="work__link">
-              <img src="./img/work-4.png" alt="image" className="work__img" />
-              <i className="ri-arrow-right-circle-line work__icon"></i>
-            </a>
-
-            <h2 className="work__title">Awesome App</h2>
-            <span className="work__subtitle">App Design</span>
-          </article>
-
-          <article className="work__card">
+          {/* <article className="work__card">
             <a href="#" target="_blank" className="work__link">
               <img src="./img/work-5.png" alt="image" className="work__img" />
               <i className="ri-arrow-right-circle-line work__icon"></i>
@@ -368,9 +404,9 @@ const Home = () => {
 
             <h2 className="work__title">Interface Design</h2>
             <span className="work__subtitle">UI/UX</span>
-          </article>
+          </article> */}
 
-          <article className="work__card">
+          {/* <article className="work__card">
             <a href="#" target="_blank" className="work__link">
               <img src="./img/work-6.png" alt="image" className="work__img" />
               <i className="ri-arrow-right-circle-line work__icon"></i>
@@ -378,7 +414,7 @@ const Home = () => {
 
             <h2 className="work__title">Interface Design</h2>
             <span className="work__subtitle">UI/UX</span>
-          </article>
+          </article> */}
         </div>
       </div>
 
@@ -398,15 +434,91 @@ const Home = () => {
               <article className="testimonial__card swiper-slide">
                 <div className="testimonial__border">
                   <img
-                    src="./img/testimonial-1.png"
+                    src="./img/management1.png"
                     alt="image"
                     className="testimonial__img"
                   />
                 </div>
-                <h2 className="testimonial__name">Jen Will</h2>
+                <h2 className="testimonial__name">
+                  Project Management <br />
+                  Cái Trí Minh <br />
+                  <h5>Phone: 0908501594</h5>
+                </h2>
+                <p className="testimonial_description">
+                  I worked with Huy, the assigned work had good content,
+                  excellent work.
+                </p>
+              </article>
+
+              <article className="testimonial__card swiper-slide">
+                <div className="testimonial__border">
+                  <img
+                    src="./img/testimonial-2.png"
+                    alt="image"
+                    className="testimonial__img"
+                  />
+                </div>
+                <h2 className="testimonial__name">Rial Loz</h2>
                 <p className="testimonial_description">
                   I hired a project and the services were of quality, the work
                   delivered is of good content, excellent work.
+                </p>
+              </article>
+
+              <article className="testimonial__card swiper-slide">
+                <div className="testimonial__border">
+                  <img
+                    src="./img/testimonial-3.png"
+                    alt="image"
+                    className="testimonial__img"
+                  />
+                </div>
+                <h2 className="testimonial__name">Mey Doth</h2>
+                <p className="testimonial_description">
+                  I hired a project and the services were of quality, the work
+                  delivered is of good content, excellent work.
+                </p>
+              </article>
+
+              <article className="testimonial__card swiper-slide">
+                <div className="testimonial__border">
+                  <img
+                    src="./img/testimonial-4.png"
+                    alt="image"
+                    className="testimonial__img"
+                  />
+                </div>
+                <h2 className="testimonial__name">Celi Phet</h2>
+                <p className="testimonial_description">
+                  I hired a project and the services were of quality, the work
+                  delivered is of good content, excellent work.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          {/* <!-- ================Pagination=================== --> */}
+          <div className="swiper-pagination"></div>
+        </div>
+        <div className="testimonial__container container">
+          <div className="testimonial__swiper swiper">
+            <div className="swiper-wrapper">
+              <article className="testimonial__card swiper-slide">
+                <div className="testimonial__border">
+                  <img
+                    src="./img/management2.png"
+                    alt="image"
+                    className="testimonial__img"
+                  />
+                </div>
+                <h2 className="testimonial__name">
+                  Leader <br />
+                  Nguyễn Trọng Hiếu <br />
+                  <h5>Phone: 0383710280</h5>
+                </h2>
+                <p className="testimonial_description">
+                  Work energetically, hard, and work well with the team.
+                  Progress in work.
                 </p>
               </article>
 
@@ -473,9 +585,9 @@ const Home = () => {
             About Your Project
           </h2>
 
-          <a href="contact.html" className="contact__button button">
+          <Link to="/contact" className="contact__button button">
             Contact Me
-          </a>
+          </Link>
         </div>
       </section>
     </div>
