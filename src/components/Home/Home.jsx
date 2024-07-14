@@ -77,8 +77,8 @@ const Home = () => {
               </div>
             </div>
             <a
-              // href="./public/pdf/CV.pdf"
-              download="./public/pdf/CV.pdf"
+              href="https://topdev.vn/users/view-cv/2c1e83a0-41ab-11ef-b2f8-cb7133e8b7b8"
+              // download="./public/pdf/CV.pdf"
               className="home__button button"
             >
               Download CV
