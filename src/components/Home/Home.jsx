@@ -78,7 +78,7 @@ const Home = () => {
             </div>
             <a
               href="./public/pdf/CV.pdf"
-              download=""
+              download="./public/pdf/CV.pdf"
               className="home__button button"
             >
               Download CV
