@@ -77,7 +77,7 @@ const Home = () => {
               </div>
             </div>
             <a
-              href="./assets/pdf/Nguyễn Thanh Huy - Software engineer.pdf"
+              href="./public/pdf/Nguyễn Thanh Huy - Software engineer.pdf"
               download=""
               className="home__button button"
             >
